@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Speech-To-Text Demo</title>
+    <script defer src="{% static 'myapp/script.js' %}"></script>
+    <link defer rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Speech-To-Text Model Visualizer</h1>
+        <button id="startRecording" class="btn">Start Recording</button>
+        <div id="imageGrid" class="image-grid">
+            <div id="imageContainer" class="image-container" 
+            data-text="The model uses the transformer framework. 
+            Each layer extracts information about the input audio.
+            The information comes in the form of tensors that describe
+            different aspects of speech and which features are more
+            important. A brighter color represents a 'feature' being
+            activated -- a sign that the model has extracted something
+            important from the input audio."></div>
+            <div id="imageContainer1" class="image-container" 
+            data-text="This shows the model's predictions of the 
+            letters over time. At every 'frame' in the audio, it
+            computes the probabilties for all of the classes. In this
+            case, we have 28 classes, representing the 26 letters, a space, 
+            and a silent token."></div>
+            <div id="imageContainer2" class="image-container " 
+            data-text="Predictions of the letters over time and wavelength."></div>
+            <div id="response" class="image-container"
+            data-text="The letters are run through a lexicon to predict
+            the most probable word(s)"></div>
+        </div>
+    </div>
+</body>
+
+</html>
