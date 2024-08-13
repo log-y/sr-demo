@@ -10,7 +10,7 @@ Summary:
 Some things I learned:
 - I learned a lot about working with audio in Python, recording it, parsing it, changing the frame-rate, buckets, quality, etc. I used pyaudio and pytorch.audio for most of the processing.
 - I gained some experience with RNNs (used to predict likely sequences of letters)
-- I also learned a lot about sending audio between the backend (harder than it sounds, in my opinion, because you have to figure out some specific 'media' requirements for django
+- I also learned a lot about sending audio between the backend (harder than it sounds, in my opinion, because you have to figure out some specific media requirements for django)
 
   Here are some pictures:
 Click 'record' to start recording:
@@ -21,3 +21,12 @@ Helpful overlays to explain project ideas:
 ![s4](https://github.com/user-attachments/assets/fd3f9c14-7c8b-4604-8de1-873935d57e6b)
 And at the end, it'll display the most likely word(s) in the audio clip (after showing the raw letters at first)!
 ![s5](https://github.com/user-attachments/assets/e5bf8f9c-a4b3-425e-be0f-4dc8216d62a5)
+
+Note:
+In order to run the demo, you need portaudio (a package that pyaudio depends on). If portaudio isn't installing correctly, try this:
+```
+pip install --global-option='build_ext' \
+    --global-option='-I/usr/local/include' \
+    --global-option='-L/usr/local/lib' \
+    pyaudio
+```
